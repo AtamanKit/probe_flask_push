@@ -3,7 +3,7 @@
 const pushButton = document.querySelector('.js-push-btn');
 
 let isSubscribed = false;
-let swRegistered = null;
+let swRegistration = null;
 
 function urlB64ToUint8Array(base64String) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -105,7 +105,7 @@ function initializeUI() {
 
     swRegistration.pushManager.getSubscription()
         .then(function(subscription) {
-            isSubscribed = !(subcription === null);
+            isSubscribed = !(subscription === null);
 
             updateSubscriptionOnServer(subscription);
 
@@ -144,7 +144,7 @@ function push_message() {
         url: "/push_v1",
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        data: JSON.stringify({'sub_token': localStorage.getItme('sub_token')}),
+        data: JSON.stringify({'sub_token': localStorage.getItem('sub_token')}),
         success: function(data) {
             console.log("success", data);
         },
