@@ -7,11 +7,14 @@ from pywebpush import webpush, WebPushException
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '9OLWxND4o83j4K4iuopO'
 
-DER_BASE64_ENCODED_PRIVATE_KEY_FILE_PATH = os.path.join(os.getcwd(),"private_key.txt")
-DER_BASE64_ENCODED_PUBLIC_KEY_FILE_PATH = os.path.join(os.getcwd(),"public_key.txt")
+# DER_BASE64_ENCODED_PRIVATE_KEY_FILE_PATH = os.path.join(os.getcwd(),"private_key.pem")
+# DER_BASE64_ENCODED_PUBLIC_KEY_FILE_PATH = os.path.join(os.getcwd(),"public_key.pem")
 
-VAPID_PRIVATE_KEY = open(DER_BASE64_ENCODED_PRIVATE_KEY_FILE_PATH, "r+").readline().strip("\n")
-VAPID_PUBLIC_KEY = open(DER_BASE64_ENCODED_PUBLIC_KEY_FILE_PATH, "r+").read().strip("\n")
+# VAPID_PRIVATE_KEY = open(DER_BASE64_ENCODED_PRIVATE_KEY_FILE_PATH, "r+").readline().strip("\n")
+# VAPID_PUBLIC_KEY = open(DER_BASE64_ENCODED_PUBLIC_KEY_FILE_PATH, "r+").read().strip("\n")
+
+VAPID_PRIVATE_KEY = 'OZTsbti6yyaqCkq8hw32ZVwQyqtlyvG6FTEr8qNMpZQ'
+VAPID_PUBLIC_KEY = 'BBxs-Mm9-GrYEPXpW0Dz0G42pApM4x2Jsiuvu8kXcvbVjaEQJcs1hN_LwqEPOsJ4hbLY8Rnzw5TOhICeCoPYiE0'
 
 VAPID_CLAIMS = {
 "sub": "mailto:develop@raturi.in"
